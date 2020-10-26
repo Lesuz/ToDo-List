@@ -25,18 +25,25 @@ window.onload = function() {
         // Add input into the cells
         // first cell has the arrow image
         cell.innerHTML = '<img class ="arrows" src="images/arrowdown.png" alt="Arrowdown">';
+
         // Adding a couple styles
         cell.style.backgroundColor = "#fff2fe";
         cell.style.borderStyle = "hidden";
+
         // add second cell with the task
         cell = row.insertCell();
         cell.innerHTML = taskToDo;
+        cell.style.paddingRight = "30px";
+
         // add the third cell with the date
         cell = row.insertCell();
         cell.innerHTML = doneByDate;
+        cell.style.width = "200px";
+
         // add the fourth cell with the image to delete the task
         cell = row.insertCell();
         cell.innerHTML = '<img class ="delete" src="images/error.png" alt="delete">';
+        
         // Adding a couple styles
         cell.style.backgroundColor = "#fff2fe";
         cell.style.borderStyle = "hidden";
