@@ -58,6 +58,7 @@ input {
     border-style: hidden ;
     background-color: #fff2fe;
     background: transparent;
+    font-size: 15px;
 }
 
 /*.ImageBorder{
@@ -84,7 +85,7 @@ footer{
 p{
     color: #46524e;
 }
-.TodoTable{
+#TodoTable{
     padding: 5px;
 }
 .task{
@@ -94,4 +95,23 @@ p{
 .doneBy{
     background-color: white;
     width: auto;
+}
+#warning{
+    color: red;
+    display: block;
+    background-color: rgb(255, 186, 177);
+    border-radius: 5px;
+    box-shadow: 2px 5px rgb(199, 199, 199);
+}
+#delete{
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+}
+#deleteButtonInfo{
+    font-size: 12px;
+}
+#deleteButton{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
