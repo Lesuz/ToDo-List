@@ -78,10 +78,12 @@ window.onload = function() {
     });
 
     function deleteTask(elem) {
-        // Save the table into a variable and remove the table from the tables parentNode -> <div>
-        // elem = image, first parentNode = cell, seccond parentNode = row, third parentNode = table
-        var taskTable = elem.parentNode.parentNode.parentNode
-        taskTable.parentNode.removeChild(taskTable);
+        if(confirm("Are you sure you want to delete the task? Is it really done?")){
+            // Save the table into a variable and remove the table from the tables parentNode -> <div>
+            // elem = image, first parentNode = cell, seccond parentNode = row, third parentNode = table
+            var taskTable = elem.parentNode.parentNode.parentNode
+            taskTable.parentNode.removeChild(taskTable);
+        }
     }
 
 }
