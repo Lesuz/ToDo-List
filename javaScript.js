@@ -10,7 +10,7 @@ window.onload = function() {
     var moreButton = document.getElementsByClassName("arrows");
     var wholeTable = document.getElementById("TodoTable");
 
-    // Add button event listener
+    // Add button event listener thta is triggered when the "add" -button is pressed
     buttonAdd.addEventListener("click", function() {
         // get input values   
         var taskToDo = inputTodo.value ;
@@ -18,6 +18,7 @@ window.onload = function() {
 
         errormessage.style.display = "none";
 
+        // Checking for empty input
         if (taskToDo === "" || taskToDo === " ") {
             errormessage.style.display = "block";
             errormessage.innerHTML = "Cannot add an empty task to the list!";
@@ -25,15 +26,16 @@ window.onload = function() {
             errormessage.style.display = "block";
             errormessage.innerHTML = "Cannot add a task without a done by date!";
         }else{
-            
+            // Getting the value of the pulldown menu(importance of task)
             var importanceValue = inputImportance.options[inputImportance.selectedIndex].value;
 
             // create table element
             var table = document.createElement('table');
+            // Adding margins to the table so that there is empty space in between of tables
             table.style.marginTop = "10px" ;
             table.style.marginBottom = "10px" ;
 
-            console.log(importanceValue);
+            // Changing the color of the table according to the importance of the task
             if(importanceValue === "low"){
                 table.style.backgroundColor = "#a6dba6";
             }else if(importanceValue === "medium"){
@@ -41,6 +43,7 @@ window.onload = function() {
             }else if(importanceValue === "high"){
                 table.style.backgroundColor = "#ff7373";
             }
+
             // add a row element into the table
             var row = table.insertRow();
             // add the first cell element into the row
@@ -59,6 +62,7 @@ window.onload = function() {
             // add the third cell with the image to delete the task
             cell = row.insertCell();
             cell.innerHTML = '<img src="images/error.png" alt="delete" class="delete">';
+            // Adding a delete function to the image
             cell.addEventListener("click", function(){
                 deleteTask(this)
             });
@@ -74,6 +78,8 @@ window.onload = function() {
     });
 
     function deleteTask(elem) {
+        // Save the table into a variable and remove the table from the tables parentNode -> <div>
+        // elem = image, first parentNode = cell, seccond parentNode = row, third parentNode = table
         var taskTable = elem.parentNode.parentNode.parentNode
         taskTable.parentNode.removeChild(taskTable);
     }
